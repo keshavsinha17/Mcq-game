@@ -1,27 +1,32 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-
+import SideBar from './components/SideBar';
+import Grid from './components/Grid';
 function App() {
-  const [count, setCount] = useState(0)
-useEffect(()=>{
-  console.log("hello");
-})
-  return (
-    <>
-      
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          <code>index.js</code>
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    const [numMines, setNumMines] = useState(3); 
 
-export default App
+    return (
+      <div className="App">
+        <h1>Minesweeper Game</h1>
+        <label>
+          Number of Mines:
+          <input
+            type="number"
+            value={numMines}
+            onChange={(e) => setNumMines(parseInt(e.target.value, 10) || '')}
+            min="1"
+            max="25"
+          />
+          <button style={{cursor:'pointer'}}>Bet</button>
+          {/* functionality to be shifted here  */}
+
+        </label>
+        <Grid gridSize={5} numMines={numMines} /> 
+      </div>
+    );
+  }
+
+  export default App;
+  
+
+

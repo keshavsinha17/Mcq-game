@@ -1,0 +1,28 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 50px); /* Adjust for 5 columns */
+    grid-gap: 5px; /* Spacing between tiles */
+}
+
+.row {
+    display: contents;
+}
+
+.tile {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #999;
+}
+
+.tile.revealed {
+    background-color: #eee;
+}
+
+.tile.revealed.mine {
+    background-color: red;
+}
