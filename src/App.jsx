@@ -14,7 +14,7 @@ useEffect(()=>{
           count is {count}
         </button>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          <code>index.js</code>
         </p>
       </div>
       <p className="read-the-docs">
